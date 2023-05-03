@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    This post title
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/posts-detail.css' %}"/>
+
+{%  endblock %}
+
+{%  block content %}
+
+<section id="summary">
+    <h2>Post title</h2>
+    <article>
+        <img src="{% static 'blog/images/profilepic.jpg' %}"  alt="post title">
+        <address>by john</address>
+        <div>
+            last updates
+        </div>
+    </article>
+</section>
+
+<main>
+    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
+    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
+    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
+</main>
+
+{% endblock %}
