@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
-
+{% load static %}
 {% block title %}
     All My Posts
 {% endblock %}
@@ -14,9 +14,11 @@
         <h2>My  Collected Pposts</h2>
 
         <ul>
-            <li>
-                <article></article>
-            </li>
+
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+
         </ul>
     </section>
 {% endblock %}
