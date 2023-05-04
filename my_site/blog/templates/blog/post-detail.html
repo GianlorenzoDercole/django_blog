@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    This post title
+    {{ post.title }}
 {% endblock %}
 
 {% block css_files %}
@@ -14,10 +14,10 @@
 {%  block content %}
 
 <section id="summary">
-    <h2>Post title</h2>
+    <h2>{{ post.title }}</h2>
     <article>
         <img src="{% static 'blog/images/profilepic.jpg' %}"  alt="post title">
-        <address>by john</address>
+        <address>by {{ post.author }}</address>
         <div>
             last updates
         </div>
@@ -25,9 +25,7 @@
 </section>
 
 <main>
-    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
-    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
-    <p>yoiuyoiuyoiuyoiuyiouyiouyiouyiouyiouyoiuiuy</p>
+    {{ post.content }}
 </main>
 
 {% endblock %}
