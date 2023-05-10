@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'blog/posts-detail.css' %}"/>
+    <link rel="stylesheet" href="{% static 'blog/post-detail.css' %}"/>
 
 {%  endblock %}
 
@@ -35,11 +35,20 @@
     {{ post.content }}
 </main>
 
-<div>
-    <form>
-        {{ comment_form }}
+<section id="comment-form">
+    <h2>your comment</h2>
+    <form >
+        <!-- {{ comment_form }}
+        <button>save comment</button> -->
+        {% for form_field in comment_form %}
+        <div class="form-control">
+            {{ form_field.label_tag }}
+            {{ form_field }}
+            {{ form_field.errors }}
+        </div>
+        {% endfor %}
         <button>save comment</button>
     </form>
-</div>
+</section>
 
 {% endblock %}
