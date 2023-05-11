@@ -14,6 +14,17 @@
 {%  block content %}
 
 
+
+
+<!-- {% if comment_form.errors %}
+    <div id="alert">
+        <h2>saving </h2>
+        <h2>saving </h2>
+        <h2>saving </h2>
+        <h2>saving </h2>
+    </div>
+{% endif %} -->
+
 <section id="summary">
     <h2>{{ post.title }}</h2>
 
@@ -31,9 +42,23 @@
     </article>
 </section>
 
+
+
 <main>
     {{ post.content }}
 </main>
+
+<section id="comments">
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <h2>{{ comment.user_name }}</h2>
+            
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
 
 <section id="comment-form">
     <h2>your comment</h2>
@@ -42,7 +67,7 @@
         <!-- {{ comment_form }}
         <button>save comment</button> -->
         {% for form_field in comment_form %}
-        <div class="form-control">
+        <div class="form-control {% if form_field.errors %}invalid{%  endif %} ">
             {{ form_field.label_tag }}
             {{ form_field }}
             {{ form_field.errors }}
