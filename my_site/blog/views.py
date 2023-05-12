@@ -53,6 +53,7 @@ class SinglePostView(View):
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
+        
         context = {
             "post": post,
             "post_tags": post.tags.all(),
